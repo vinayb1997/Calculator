@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vinaybcalculator 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vinaybcalculator
+  template:
+    metadata:
+      labels:
+        app: vinaybcalculator 
+    spec:
+      containers:
+        - name: vinaybcalculator 
+          image: hariacr21.azurecr.io/vinaybcalculator
+          ports:
+          - containerPort: 80
